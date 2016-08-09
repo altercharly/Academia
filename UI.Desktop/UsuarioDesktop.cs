@@ -33,8 +33,58 @@ namespace UI.Desktop
         }
 
         public Usuario UsuarioActual;
-        public override void MapearDeDatos() { }
-        public override void MapearADatos() { }
+        public override void MapearDeDatos() {
+
+
+            this.txtID.Text = this.UsuarioActual.ID.ToString();
+            this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
+            this.txtNombre.Text = this.UsuarioActual.Nombre;
+            this.txtApellido.Text = this.UsuarioActual.Apellido;
+            this.txtEmail.Text = this.UsuarioActual.Email.ToString(); 
+            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+            this.txtClave.Text = this.UsuarioActual.Clave.ToString();
+            /// validar clave?????? comparar los valores de Clave y ConfirmarClave, si son iguales mapear, sino cartel  this.txtConfirmarClave.Text = this.UsuarioActual
+            int op = (int) _modo;
+
+            switch (op)
+
+            {
+                case 0:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case 1:
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+                case 2:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                default:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+            }
+        }
+        public override void MapearADatos() {
+            Usuario NuevoUsuario = new Usuario();
+            int op = (int)_modo;
+
+            switch (op)
+            {
+                case 0:
+                    NuevoUsuario = UsuarioActual;
+                    //revisar constructor, debido a falta ID
+                    break;
+                case 1:
+                    ;
+                    break;
+                case 2:
+                    NuevoUsuario = UsuarioActual;
+                    break;
+                default:
+                   ;
+                    break;
+            }
+                   
+        }
         public override void GuardarCambios() { }
         public override bool Validar() { return false; }
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
@@ -66,6 +116,11 @@ namespace UI.Desktop
             UsuarioLogic u1 = new UsuarioLogic();
             UsuarioActual = u1.GetOne(ID);
             this.MapearDeDatos();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

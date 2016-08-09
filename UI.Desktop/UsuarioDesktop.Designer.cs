@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,14 +38,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.chkHabilitado = new System.Windows.Forms.CheckBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,8 +56,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -65,14 +65,14 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -83,27 +83,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(664, 236);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.AccessibleName = "btnAceptar";
-            this.button1.Location = new System.Drawing.Point(334, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAceptar.AccessibleName = "btnAceptar";
+            this.btnAceptar.Location = new System.Drawing.Point(334, 179);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(92, 29);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.AccessibleName = "btnCancelar";
-            this.button2.Location = new System.Drawing.Point(433, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.AccessibleName = "btnCancelar";
+            this.btnCancelar.Location = new System.Drawing.Point(433, 179);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(91, 29);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -169,73 +170,73 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Apellido";
             // 
-            // checkBox1
+            // chkHabilitado
             // 
-            this.checkBox1.AccessibleName = "chkHabilitado";
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(334, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Habilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkHabilitado.AccessibleName = "chkHabilitado";
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Location = new System.Drawing.Point(334, 3);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
+            this.chkHabilitado.TabIndex = 9;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.AccessibleName = "txtID";
-            this.textBox1.Location = new System.Drawing.Point(102, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtID.AccessibleName = "txtID";
+            this.txtID.Location = new System.Drawing.Point(102, 3);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(226, 20);
+            this.txtID.TabIndex = 10;
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.AccessibleName = "txtNombre";
-            this.textBox2.Location = new System.Drawing.Point(102, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(226, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtNombre.AccessibleName = "txtNombre";
+            this.txtNombre.Location = new System.Drawing.Point(102, 47);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(226, 20);
+            this.txtNombre.TabIndex = 11;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.AccessibleName = "txtEmail";
-            this.textBox3.Location = new System.Drawing.Point(102, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(226, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtEmail.AccessibleName = "txtEmail";
+            this.txtEmail.Location = new System.Drawing.Point(102, 91);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(226, 20);
+            this.txtEmail.TabIndex = 12;
             // 
-            // textBox4
+            // txtClave
             // 
-            this.textBox4.AccessibleName = "txtClave";
-            this.textBox4.Location = new System.Drawing.Point(102, 135);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtClave.AccessibleName = "txtClave";
+            this.txtClave.Location = new System.Drawing.Point(102, 135);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(226, 20);
+            this.txtClave.TabIndex = 13;
             // 
-            // textBox5
+            // txtApellido
             // 
-            this.textBox5.AccessibleName = "txtApellido";
-            this.textBox5.Location = new System.Drawing.Point(433, 47);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtApellido.AccessibleName = "txtApellido";
+            this.txtApellido.Location = new System.Drawing.Point(433, 47);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(223, 20);
+            this.txtApellido.TabIndex = 14;
             // 
-            // textBox6
+            // txtUsuario
             // 
-            this.textBox6.AccessibleName = "txtUsuario";
-            this.textBox6.Location = new System.Drawing.Point(433, 91);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(223, 20);
-            this.textBox6.TabIndex = 15;
+            this.txtUsuario.AccessibleName = "txtUsuario";
+            this.txtUsuario.Location = new System.Drawing.Point(433, 91);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(223, 20);
+            this.txtUsuario.TabIndex = 15;
             // 
-            // textBox7
+            // txtConfirmarClave
             // 
-            this.textBox7.AccessibleName = "txtConfirmarClave";
-            this.textBox7.Location = new System.Drawing.Point(433, 135);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(223, 20);
-            this.textBox7.TabIndex = 16;
+            this.txtConfirmarClave.AccessibleName = "txtConfirmarClave";
+            this.txtConfirmarClave.Location = new System.Drawing.Point(433, 135);
+            this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.Size = new System.Drawing.Size(223, 20);
+            this.txtConfirmarClave.TabIndex = 16;
             // 
             // UsuarioDesktop
             // 
@@ -253,8 +254,8 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -262,13 +263,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.CheckBox chkHabilitado;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtConfirmarClave;
     }
 }
