@@ -12,9 +12,18 @@ namespace UI.Desktop
 {
     public partial class UsuarioDesktop : UI.Desktop.ApplicationForm
     {
+        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
+        private ModoForm _modo;
+
         public UsuarioDesktop()
         {
             InitializeComponent();
+        }
+
+        public ModoForm Modo
+        {
+            get { return _modo; }
+            set { _modo = value; }
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
@@ -22,15 +31,9 @@ namespace UI.Desktop
 
         }
 
-        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
+        
 
-        private ModoForm _modo;
 
-        public ModoForm Modo
-        {
-            get { return _modo; }
-            set { _modo = value; }
-        }
 
         public Usuario UsuarioActual;
         public override void MapearDeDatos() {
@@ -89,11 +92,11 @@ namespace UI.Desktop
         public override bool Validar() { return false; }
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
-          
+            MessageBox.Show(mensaje, titulo, botones, icono);
         }
         public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
-          
+            this.Notificar(this.Text, mensaje, botones, icono);
         }
 
         private void ApplicationForm_Load(object sender, EventArgs e)
