@@ -12,14 +12,31 @@ namespace UI.Desktop
 {
     public partial class ApplicationForm : Form
     {
-        public ApplicationForm()
-        {
-            InitializeComponent();
-    
-        }
+        
+        #region Variables
         public enum ModoForm { Alta, Baja, Modificacion, Consulta };
 
         public ModoForm _Modo;
+
+        #endregion
+
+        #region Constructores
+        public ApplicationForm()
+        {
+            InitializeComponent();
+
+        }
+        #endregion
+
+        #region Propiedades
+        public ModoForm Modo
+        {
+            get { return _Modo; }
+            set { _Modo = value; }
+        }
+        #endregion
+
+        #region Metodos
         public virtual void MapearDeDatos() { }
         public virtual void MapearADatos() { }
         public virtual void GuardarCambios() { }
@@ -32,7 +49,7 @@ namespace UI.Desktop
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
-
+        #endregion
         private void ApplicationForm_Load(object sender, EventArgs e)
         {
 
