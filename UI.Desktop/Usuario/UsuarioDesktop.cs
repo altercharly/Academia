@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
-//using Util;
+using Util;
 
 namespace UI.Desktop
 {
@@ -123,7 +123,7 @@ namespace UI.Desktop
             }
         }
 
-      /*  public override bool Validar()
+       public override bool Validar()
         {
             Boolean estado = true;
             if (!(this.Modo == ModoForm.Baja))
@@ -161,7 +161,7 @@ namespace UI.Desktop
             }
             return estado;
         }
-*/
+
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             MessageBox.Show(mensaje, titulo, botones, icono);
@@ -172,7 +172,7 @@ namespace UI.Desktop
         }
 
         #endregion
-        /*
+        
         #region Eventos
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -206,6 +206,6 @@ namespace UI.Desktop
         }
         
         #endregion
-       */
+       
     }
 }

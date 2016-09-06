@@ -147,7 +147,7 @@
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
-            Load += new System.EventHandler(this.Form1_Load);
+           // Load += new System.EventHandler(this.Form1_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.PerformLayout();

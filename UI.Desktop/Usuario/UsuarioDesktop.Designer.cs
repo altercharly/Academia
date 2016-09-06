@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(664, 236);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+  //          this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // btnAceptar
             // 
@@ -94,7 +94,7 @@
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
+   //         this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCancelar
             // 
@@ -244,7 +244,7 @@
             this.ClientSize = new System.Drawing.Size(668, 238);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioDesktop";
-            this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
+          //  this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
