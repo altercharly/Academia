@@ -61,6 +61,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persona\Persona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persona\Persona.Designer.cs">
+      <DependentUpon>Persona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persona\PersonaDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persona\PersonaDesktop.Designer.cs">
+      <DependentUpon>PersonaDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persona\PersonaDesktop.resx">
+      <DependentUpon>PersonaDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
@@ -123,9 +138,7 @@
       <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persona\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

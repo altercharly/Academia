@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Personas : BusinessEntity
+    public class Personas : BusinessEntity
     {
         private string _Apellido;
         private string _Direccion;
@@ -53,10 +53,17 @@ namespace Business.Entities
             get { return _Nombre; }
             set { _Nombre = value; }
         }
-        //public TiposPersona TipoPersonas
-        //{
-        //    get { return _TipoPersonas; }
-        //    set { _TipoPersonas = value; }
-        //}
+
+        public string Telefono
+        {
+            get { return _Telefono; }
+            set { _Telefono = value; }
+        }
+
+        /*public TiposPersona TipoPersonas
+        {
+            get { return _TipoPersonas; }
+            set { _TipoPersonas = value; }
+        }*/
     }
 }
