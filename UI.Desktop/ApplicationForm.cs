@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -14,9 +16,11 @@ namespace UI.Desktop
     {
         
         #region Variables
-        public enum ModoForm { Alta, Baja, Modificacion, Consulta };
-
-        public ModoForm _Modo;
+        public enum ModoForm
+        {
+            Alta, Baja, Modificacion, Consulta
+        }
+        private ModoForm _Modo;
 
         #endregion
 
@@ -24,7 +28,6 @@ namespace UI.Desktop
         public ApplicationForm()
         {
             InitializeComponent();
-
         }
         #endregion
 
@@ -41,6 +44,7 @@ namespace UI.Desktop
         public virtual void MapearADatos() { }
         public virtual void GuardarCambios() { }
         public virtual bool Validar() { return false; }
+
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono) 
         {
             MessageBox.Show(mensaje, titulo, botones, icono);

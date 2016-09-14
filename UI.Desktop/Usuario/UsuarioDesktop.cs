@@ -8,12 +8,16 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
-using Util;
 
 namespace UI.Desktop
 {
     public partial class UsuarioDesktop : UI.Desktop.ApplicationForm
     {
+        private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {
+
+        }
+
         #region Variables
 
         private Usuario _usuarioActual;
@@ -28,14 +32,12 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public UsuarioDesktop(ModoForm modo)
-            : this()
+        public UsuarioDesktop(ModoForm modo): this()
         {
             this.Modo = modo;
         }
 
-        public UsuarioDesktop(int ID, ModoForm modo)
-            : this()
+        public UsuarioDesktop(int ID, ModoForm modo): this()
         {
             this.Modo = modo;
             _usuarioActual = new UsuarioLogic().GetOne(ID);
@@ -82,7 +84,7 @@ namespace UI.Desktop
             new UsuarioLogic().Save(_usuarioActual);
         }
 
-        public virtual void MapearADatos()
+        public override void MapearADatos()
         {
 
             switch (this.Modo)
@@ -123,43 +125,30 @@ namespace UI.Desktop
             }
         }
 
-       public override bool Validar()
+        public override bool Validar()
         {
-            Boolean estado = true;
-            if (!(this.Modo == ModoForm.Baja))
+            if (this.txtApellido.Text == "" || this.txtNombre.Text == "" || this.txtEmail.Text == "" || this.txtUsuario.Text == "" || this.txtClave.Text == "" || this.txtConfirmarClave.Text == "")
             {
-                foreach (Control control in this.tableLayoutPanel1.Controls)
-                {
-                    if (!(control == txtID))
-                    {
-                        if (control is TextBox && control.Text == String.Empty)
-                        {
-                            estado = false;
-                        }
-                    }
-
-                }
-                if (estado == false)
-                {
-                    Notificar("Campos vacíos", "Existen campos sin completar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (!(Util.ValidarEMails.esMailValido(this.txtEmail.Text)))
-                {
-                    estado = false;
-                    Notificar("Mail no valido", "Mail no valido. Escribe una dirección de correo electrónico con el formato alguien@ejemplo.com.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (!(String.Equals(this.txtClave.Text, this.txtConfirmarClave.Text)))
-                {
-                    estado = false;
-                    Notificar("Contraseñas incorrectas", "Las contraseñas no coinciden.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (!((this.txtClave.Text).Length >= 8))
-                {
-                    estado = false;
-                    Notificar("Clave corta", "La contraseña debe contener al menos 8 caracteres.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Notificar("Todos los campos son obligatorios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return estado;
+            else if (!(this.txtClave.Text == this.txtConfirmarClave.Text))
+            {
+                Notificar("Las claves no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (this.txtClave.Text.Length < 8)
+            {
+                Notificar("La clave debe poseer por lo menos 8 caracteres", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!this.txtEmail.Text.Contains("@") && !this.txtEmail.Text.Contains("."))
+            {
+                Notificar("Ingrese un Email valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+                return true;
         }
 
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
@@ -177,16 +166,16 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(Validar())
+            if (Validar() == true)
             {
                 GuardarCambios();
-                Close();
+                this.Close();
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Close();
+           this.Close();
         }
 
         private void chkPass_CheckedChanged(object sender, EventArgs e)
@@ -204,8 +193,9 @@ namespace UI.Desktop
                 this.txtConfirmarClave.PasswordChar = '•';
             }
         }
-        
+
         #endregion
-       
+
+
     }
 }

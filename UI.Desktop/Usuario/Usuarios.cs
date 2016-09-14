@@ -33,7 +33,7 @@ namespace UI.Desktop
         #endregion
 
         #region Eventos
-        private void Usuario_Load(object sender, EventArgs e)
+        private void Usuarios_Load(object sender, EventArgs e)
         {
             this.Listar();
 
@@ -49,14 +49,14 @@ namespace UI.Desktop
             this.Close();
         }
 
-        private void tbsNuevo_Click(object sender, EventArgs e)
+        private void tsbNuevo_Click(object sender, EventArgs e)
         {
             UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
             formUsuario.ShowDialog();
             this.Listar();
         }
 
-        private void tbsEditar_Click(object sender, EventArgs e)
+        private void tsbEditar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace UI.Desktop
             }
         }
 
-        private void tbsEliminar_Click(object sender, EventArgs e)
+        private void tsbEliminar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -92,5 +92,6 @@ namespace UI.Desktop
             }
         }
         #endregion
+                
     }
 }
