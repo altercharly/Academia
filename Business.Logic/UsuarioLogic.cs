@@ -25,7 +25,14 @@ namespace Business.Logic
 
         public List<Usuario> GetAll ()
         {
-            return UsuarioData.GetAll();
+            try
+            {
+                return UsuarioData.GetAll();
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception("Error en la carga de datos", Ex);
+            }
         }
         
         public Usuario GetOne (int  Id )

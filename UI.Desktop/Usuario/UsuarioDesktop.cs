@@ -125,7 +125,7 @@ namespace UI.Desktop
             }
         }
 
-        public override bool Validar()
+        public bool Validar()
         {
             if (this.txtApellido.Text == "" || this.txtNombre.Text == "" || this.txtEmail.Text == "" || this.txtUsuario.Text == "" || this.txtClave.Text == "" || this.txtConfirmarClave.Text == "")
             {
@@ -194,8 +194,9 @@ namespace UI.Desktop
             }
         }
 
+
         #endregion
 
-
+       
     }
 }
