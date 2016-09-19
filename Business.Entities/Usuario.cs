@@ -12,7 +12,7 @@ namespace Business.Entities
         private string _NombreUsuario;
         private string _Clave;
         private string _Nombre;
-        private string _Apellido;
+        private string _Apellido;   
         private string _Email;
         private bool _Habilitado;
 

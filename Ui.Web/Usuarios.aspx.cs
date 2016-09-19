@@ -9,7 +9,7 @@ using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class FormUsuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace UI.Web
         private void LoadGrid()
         {
             this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.Databind();               
+            this.gridView.DataBind();               
         }
         
         private Usuario Entity
@@ -88,16 +88,16 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
+            this.ApellidoTextBox.Text = this.Entity.Apellido;
             this.emailTextBox.Text = this.Entity.Email;
-            this.habilitadoCheckBox.Text = this.Entity.Habilitado;
+            this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
         }
         
         private void LoadEntity (Usuario usuario)
         {
             usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
+            usuario.Apellido = this.ApellidoTextBox.Text;
             usuario.Email = this.emailTextBox.Text;
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
@@ -106,13 +106,13 @@ namespace UI.Web
 
         private void SaveEntity(Usuario usuario)
         {
-            this.Logic.Save(usuario)
+            this.Logic.Save(usuario);
         }
 
         private void EnableForm(bool enable)
         {
             this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
+            this.ApellidoTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
             this.nombreUsuarioTextBox.Enabled = enable;
             this.claveTextBox.Visible = enable;
@@ -129,10 +129,10 @@ namespace UI.Web
         private void ClearForm()
         {
             this.nombreTextBox.Text = string.Empty;
-            this.apellidoBox.Text = string.Empty;
-            this.emailBox.Text = string.Empty;
+            this.ApellidoTextBox.Text = string.Empty;
+            this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
-            this.nombreUsuarioBox.Text = string.Empty;
+            this.nombreUsuarioTextBox.Text = string.Empty;
         }
 
         protected void gridView_SelectedIndexChanged(object sneder, EventArgs e)
@@ -144,7 +144,7 @@ namespace UI.Web
         {
             if (this.IsEntitySelected)
             {
-                this.formPanel.Visible = true;
+                this.Usuarios.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
             }
@@ -176,14 +176,14 @@ namespace UI.Web
                 default:
                     break;
             }
-               this.formPanel.Visible = false;
+               this.Usuarios.Visible = false;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                this.formPanel.Visible = true;
+                this.Usuarios.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
                 this.LoadForm(this.SelectedID);
@@ -192,7 +192,7 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
-            this.formPanel.Visible = true;
+            this.Usuarios.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
             this.EnableForm(true);

@@ -10,7 +10,7 @@
 namespace UI.Web {
     
     
-    public partial class Formulario_web11 {
+    public partial class FormUsuarios{
         
         /// <summary>
         /// Control gridPanel.
@@ -31,13 +31,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.GridView gridView;
         
         /// <summary>
-        /// Control formPanel.
+        /// Control Usuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formPanel;
+        protected global::System.Web.UI.WebControls.Panel Usuarios;
         
         /// <summary>
         /// Control nombreLabel.
@@ -103,13 +103,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Label habilitadoLabel;
         
         /// <summary>
-        /// Control habilitadoTextBox.
+        /// Control habilitadoCheckBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox habilitadoTextBox;
+        protected global::System.Web.UI.WebControls.CheckBox habilitadoCheckBox;
         
         /// <summary>
         /// Control nombreUsuarioLabel.

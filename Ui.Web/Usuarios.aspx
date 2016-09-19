@@ -12,7 +12,7 @@
             </Columns>
         </asp:GridView>
     </asp:Panel>
-<asp:Panel ID="formPanel" Visible="false" runat="server">
+<asp:Panel ID="Usuarios" Visible="false" runat="server">
     <asp:Label ID="nombreLabel" runat="server" Text="Nombre: ">  </asp:Label>
     <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
     <br />
@@ -23,7 +23,7 @@
     <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: ">  </asp:Label>
-    <asp:TextBox ID="habilitadoTextBox" runat="server"></asp:TextBox>
+    <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
     <br />
     <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: ">  </asp:Label>
     <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
