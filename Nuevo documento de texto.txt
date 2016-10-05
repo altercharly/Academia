@@ -1,4 +1,4 @@
-Ôªøusing System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,12 +66,12 @@ namespace UI.Desktop
         #region Metodos
         public override void MapearDeDatos()
         {
-            this.txtId.Text = this.MateriaActual.ID.ToString();
+            this.txtID.Text = this.MateriaActual.ID.ToString();
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
-            this.txtHorasSemanales.Text = this.MateriaActual.HSSemanales.ToString();
-            this.txtHorasTotales.Text = this.MateriaActual.HSTotales.ToString();
-            this.txtIdPlan.Text = this.MateriaActual.IDPlan.ToString();
-
+            this.txtHSSemanales.Text = this.MateriaActual.HSSemanales.ToString();
+            this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
+            this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
+            
         }
 
         public override void GuardarCambios()
@@ -101,7 +101,7 @@ namespace UI.Desktop
                     this.PersonaActual.Apellido = this.txtApellido.Text;
                     this.PersonaActual.Email = this.txtEmail.Text;
                     this.PersonaActual.Direccion = this.txtDireccion.Text;
-                    DateTime fechaNac = new DateTime(int.Parse(this.txtA√±o.Text), int.Parse(this.txtMes.Text), int.Parse(this.txtDia.Text), 0, 0, 0);
+                    DateTime fechaNac = new DateTime(int.Parse(this.txtAÒo.Text), int.Parse(this.txtMes.Text), int.Parse(this.txtDia.Text), 0, 0, 0);
                     this.PersonaActual.FechaNacimiento = fechaNac;
                     this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                     this.PersonaActual.Telefono = this.txtTelefono.Text;
@@ -116,7 +116,7 @@ namespace UI.Desktop
                     this.PersonaActual.Apellido = this.txtApellido.Text;
                     this.PersonaActual.Email = this.txtEmail.Text;
                     this.PersonaActual.Direccion = this.txtDireccion.Text;
-                    DateTime fechaNac = new DateTime(int.Parse(this.txtA√±o.Text), int.Parse(this.txtMes.Text), int.Parse(this.txtDia.Text), 0, 0, 0);
+                    DateTime fechaNac = new DateTime(int.Parse(this.txtAÒo.Text), int.Parse(this.txtMes.Text), int.Parse(this.txtDia.Text), 0, 0, 0);
                     this.PersonaActual.FechaNacimiento = fechaNac;
                     this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
                     this.PersonaActual.Telefono = this.txtTelefono.Text;
@@ -136,70 +136,70 @@ namespace UI.Desktop
                 }
         }
     }*/
-        /*
-        private Plan DevolverPlan()
-        {
-            // generar PlanLogic
-            return new PlanLogic().GetOne(((Business.Entities.Plan)this.cmbPlan.SelectedValue).ID); ;
-        }
+    /*
+    private Plan DevolverPlan()
+    {
+        // generar PlanLogic
+        return new PlanLogic().GetOne(((Business.Entities.Plan)this.cmbPlan.SelectedValue).ID); ;
+    }
 
-        /*  public override bool Validar()
+    /*  public override bool Validar()
+      {
+          int nro;
+          Boolean estado = true;
+          try
           {
-              int nro;
-              Boolean estado = true;
-              try
+              if (!(this.Modo == ModoForm.Baja))
               {
-                  if (!(this.Modo == ModoForm.Baja))
+                  foreach (Control control in this.tableLayoutPanel1.Controls)
                   {
-                      foreach (Control control in this.tableLayoutPanel1.Controls)
+                      if (!(control == txtID))
                       {
-                          if (!(control == txtID))
+                          if (control is TextBox && control.Text == String.Empty)
                           {
-                              if (control is TextBox && control.Text == String.Empty)
-                              {
-                                  estado = false;
-                              }
+                              estado = false;
                           }
                       }
-                      if (estado == false)
-                      {
-                          Notificar("Campos vac√≠os", "Existen campos sin completar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
-                      else if (!(ValidarEMails.esMailValido(this.txtEmail.Text)))
-                      {
-                          estado = false;
-                          Notificar("Mail no valido", "Mail no valido. Escribe una direcci√≥n de correo electr√≥nico con el formato alguien@ejemplo.com.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
-                      else if (!(int.TryParse(this.txtA√±o.Text, out nro)) || !(int.TryParse(this.txtMes.Text, out nro)) || !(int.TryParse(this.txtDia.Text, out nro)))
-                      {
-                          estado = false;
-                          Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado una fecha correcta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
-                      else if (!(0 < int.Parse(this.txtA√±o.Text)))
-                      {
-                          estado = false;
-                          Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado para el a√±o un n√∫mero positivo.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
-                      else if (!((0 < int.Parse(this.txtMes.Text)) && (int.Parse(this.txtMes.Text) < 13)))
-                      {
-                          estado = false;
-                          Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado para el mes un n√∫mero positivo menor a 13.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
-                      else if (!((0 < int.Parse(this.txtDia.Text)) && (int.Parse(this.txtDia.Text) < 32)))
-                      {
-                          estado = false;
-                          Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado para el d√≠a un n√∫mero positivo menor a 32.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
                   }
-                  return estado;
-              }
-              catch (Exception e)
-              {
-                  Notificar("ERROR", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  estado = false;
+                  if (estado == false)
+                  {
+                      Notificar("Campos vacÌos", "Existen campos sin completar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+                  else if (!(ValidarEMails.esMailValido(this.txtEmail.Text)))
+                  {
+                      estado = false;
+                      Notificar("Mail no valido", "Mail no valido. Escribe una direcciÛn de correo electrÛnico con el formato alguien@ejemplo.com.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+                  else if (!(int.TryParse(this.txtAÒo.Text, out nro)) || !(int.TryParse(this.txtMes.Text, out nro)) || !(int.TryParse(this.txtDia.Text, out nro)))
+                  {
+                      estado = false;
+                      Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado una fecha correcta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+                  else if (!(0 < int.Parse(this.txtAÒo.Text)))
+                  {
+                      estado = false;
+                      Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado para el aÒo un n˙mero positivo.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+                  else if (!((0 < int.Parse(this.txtMes.Text)) && (int.Parse(this.txtMes.Text) < 13)))
+                  {
+                      estado = false;
+                      Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado para el mes un n˙mero positivo menor a 13.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+                  else if (!((0 < int.Parse(this.txtDia.Text)) && (int.Parse(this.txtDia.Text) < 32)))
+                  {
+                      estado = false;
+                      Notificar("Error en la fecha de nacimiento", "Verifique haber ingresado para el dÌa un n˙mero positivo menor a 32.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
               }
               return estado;
-          }*/
+          }
+          catch (Exception e)
+          {
+              Notificar("ERROR", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+              estado = false;
+          }
+          return estado;
+      }*/
 
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
@@ -228,12 +228,12 @@ namespace UI.Desktop
             Close();
         }
 
-        /*private void MateriaDesktop_Load(object sender, EventArgs e)
+        private void MateriaDesktop_Load(object sender, EventArgs e)
         {
             cmbPlan.DataSource = new PlanLogic().GetAll();
             cmbPlan.DisplayMember = "descripcion";
             cmbPlan.ValueMember = "id_plan";
-        }*/
+        }
 
         #endregion
     }

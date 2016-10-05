@@ -13,7 +13,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class Usuarios : Form
+    public partial class Usuarios : ApplicationForm
     {
         #region Constructores
         public Usuarios()
@@ -68,7 +68,7 @@ namespace UI.Desktop
                     this.Listar();
                 }
             }
-            catch (ArgumentOutOfRangeException ef)
+            catch (ArgumentOutOfRangeException e)
             {
                 MessageBox.Show("No existen registros a editar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -86,7 +86,7 @@ namespace UI.Desktop
                     this.Listar();
                 }
             }
-            catch (ArgumentOutOfRangeException ef)
+            catch (ArgumentOutOfRangeException e)
             {
                 MessageBox.Show("No existen registros a eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

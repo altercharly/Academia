@@ -13,13 +13,19 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class Materias : Form
+    public partial class Materias: ApplicationForm
+
     {
         #region Constructores
-        public Materia()
+        public Materias()
         {
             InitializeComponent();
-            this.dgvUsuarios.AutoGenerateColumns = false;
+            this.dgvMateria.AutoGenerateColumns = false;
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -68,7 +74,7 @@ namespace UI.Desktop
                     this.Listar();
                 }
             }
-            catch (ArgumentOutOfRangeException ef)
+            catch (ArgumentOutOfRangeException e)
             {
                 MessageBox.Show("No existen registros a editar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -86,7 +92,7 @@ namespace UI.Desktop
                     this.Listar();
                 }
             }
-            catch (ArgumentOutOfRangeException ef)
+            catch (ArgumentOutOfRangeException e)
             {
                 MessageBox.Show("No existen registros a eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
