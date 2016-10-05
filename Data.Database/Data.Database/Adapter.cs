@@ -8,7 +8,11 @@ namespace Data.Database
 {
     public class Adapter
     {
+
         #region Propiedades
+        private String dataBase = "academia";
+        private String usuario = "root";
+        private String contraseña = "root";
         private SqlConnection _sqlConn;
 
         public SqlConnection sqlConn
