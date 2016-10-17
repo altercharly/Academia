@@ -102,6 +102,12 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materia\Materia.resx">
+      <DependentUpon>Materia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia\MateriaDesktop.resx">
+      <DependentUpon>MateriaDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Persona\PersonaDesktop.resx">
       <DependentUpon>PersonaDesktop.cs</DependentUpon>
     </EmbeddedResource>

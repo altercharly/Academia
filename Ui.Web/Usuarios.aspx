@@ -15,24 +15,29 @@
 <asp:Panel ID="Usuarios" Visible="false" runat="server">
     <asp:Label ID="nombreLabel" runat="server" Text="Nombre: ">  </asp:Label>
     <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
     <br />
     <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: ">  </asp:Label>
     <asp:TextBox ID="ApellidoTextBox" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
     <br />
     <asp:Label ID="emailLabel" runat="server" Text="Email: ">  </asp:Label>
     <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
     <br />
     <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: ">  </asp:Label>
     <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
     <br />
     <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: ">  </asp:Label>
     <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
     <br />
     <asp:Label ID="claveLabel" runat="server" Text="Clave: ">  </asp:Label>
     <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: ">  </asp:Label>
     <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
     <br />
 </asp:Panel>
 
@@ -40,6 +45,7 @@
     <asp:LinkButton ID="editarLinkButton" runat="server"> Editar </asp:LinkButton>
     <asp:LinkButton ID="eliminarLinkButton" runat="server"> Eliminar </asp:LinkButton>
     <asp:LinkButton ID="nuevoLinkButton" runat="server"> Nuevo </asp:LinkButton>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
 </asp:Panel>
 
 <asp:Panel ID="formActionsPanel" runat="server">

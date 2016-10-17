@@ -13,5 +13,6 @@ namespace Business.Logic
         Data.Database.UsuarioAdapter _UsuarioData;
         Data.Database.PersonaAdapter _PersonaData;
         Data.Database.PlanAdapter _PlanData;
+        Data.Database.MateriaAdapter _MateriaData;
     }
 }

@@ -20,20 +20,16 @@ namespace UI.Desktop
         public Materias()
         {
             InitializeComponent();
-            this.dgvMateria.AutoGenerateColumns = false;
+            this.dgvMaterias.AutoGenerateColumns = false;
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         #region Metodos
         public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.DataSource = ul.GetAll();
+            this.dgvMaterias.DataSource = ul.GetAll();
         }
 
         #endregion
@@ -66,15 +62,15 @@ namespace UI.Desktop
         {
             try
             {
-                if (!(this.dgvUsuarios.SelectedRows == null))
+                if (!(this.dgvMaterias.SelectedRows == null))
                 {
-                    int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                    int ID = ((Business.Entities.Usuario)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
                     UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                     formUsuario.ShowDialog();
                     this.Listar();
                 }
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show("No existen registros a editar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -84,15 +80,15 @@ namespace UI.Desktop
         {
             try
             {
-                if (!(this.dgvUsuarios.SelectedRows == null))
+                if (!(this.dgvMaterias.SelectedRows == null))
                 {
-                    int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                    int ID = ((Business.Entities.Usuario)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
                     UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
                     formUsuario.ShowDialog();
                     this.Listar();
                 }
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show("No existen registros a eliminar.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

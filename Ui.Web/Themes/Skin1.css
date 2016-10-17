@@ -1,0 +1,18 @@
+﻿* {
+    background-color: darkslategrey;
+    font-size: 12px;
+    font-family: Verdana;
+    color: black;
+    
+}
+
+h1{
+    font-size:20px;
+    text-align: center;
+}
+
+#bodyForm{
+    position:relative;
+
+}
+
