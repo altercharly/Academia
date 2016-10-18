@@ -13,29 +13,29 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class PersonaDesktop : ApplicationForm
+    public partial class ProfesoresDesktop : ApplicationForm
     {
         #region Variables
-        private Business.Entities.Personas _personaActual;
+        private Business.Entities.Personas _profesorActual;
         #endregion
 
         #region Constructores
-        public PersonaDesktop()
+        public ProfesoresDesktop()
         {
             InitializeComponent();
         }
 
-        public PersonaDesktop(ModoForm modo )
+        public ProfesoresDesktop(ModoForm modo )
             : this()
         {
             this.Modo = modo;
         }
 
-        public PersonaDesktop(int ID, ModoForm modo)
+        public ProfesoresDesktop(int ID, ModoForm modo)
             :this()
         {
             this.Modo = modo;
-            _personaActual = new PersonaLogic().GetOne(ID);
+            _profesorActual = new PersonaLogic().GetOne(ID);
             MapearDeDatos();
             switch (modo)
             {
@@ -52,26 +52,26 @@ namespace UI.Desktop
         #endregion
 
         #region Propiedades
-        public Business.Entities.Personas PersonaActual
+        public Business.Entities.Personas ProfesorActual
         {
-            get { return _personaActual; }
-            set { _personaActual = value; }
+            get { return _profesorActual; }
+            set { _profesorActual = value; }
         }
         #endregion
 
         #region Metodos
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.PersonaActual.ID.ToString();
-            this.txtNombre.Text = this.PersonaActual.Nombre;
-            this.txtApellido.Text = this.PersonaActual.Apellido;
-            this.txtEmail.Text = this.PersonaActual.Email;
-            this.txtDia.Text = this.PersonaActual.FechaNacimiento.Day.ToString();
-            this.txtMes.Text = this.PersonaActual.FechaNacimiento.Month.ToString();
-            this.txtAño.Text = this.PersonaActual.FechaNacimiento.Year.ToString();
-            this.txtDireccion.Text = this.PersonaActual.Direccion;
-            this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-            this.txtTelefono.Text = this.PersonaActual.Telefono;
+            this.txtID.Text = this.ProfesorActual.ID.ToString();
+            this.txtNombre.Text = this.ProfesorActual.Nombre;
+            this.txtApellido.Text = this.ProfesorActual.Apellido;
+            this.txtEmail.Text = this.ProfesorActual.Email;
+            this.txtDia.Text = this.ProfesorActual.FechaNacimiento.Day.ToString();
+            this.txtMes.Text = this.ProfesorActual.FechaNacimiento.Month.ToString();
+            this.txtAño.Text = this.ProfesorActual.FechaNacimiento.Year.ToString();
+            this.txtDireccion.Text = this.ProfesorActual.Direccion;
+            this.txtLegajo.Text = this.ProfesorActual.Legajo.ToString();
+            this.txtTelefono.Text = this.ProfesorActual.Telefono;
         }
 
         public override void GuardarCambios()
@@ -79,7 +79,7 @@ namespace UI.Desktop
             try
             {
                 MapearADatos();
-                new PersonaLogic().Save(PersonaActual);
+                new PersonaLogic().Save(ProfesorActual);
             }
             catch (Exception ex)
             {
@@ -95,43 +95,43 @@ namespace UI.Desktop
             {
                 case (ModoForm.Alta):
                     {
-                        PersonaActual = new Business.Entities.Personas();
-                        this.PersonaActual.IDPlan = planActual.ID;
-                        this.PersonaActual.Nombre = this.txtNombre.Text;
-                        this.PersonaActual.Apellido = this.txtApellido.Text;
-                        this.PersonaActual.Email = this.txtEmail.Text;
-                        this.PersonaActual.Direccion = this.txtDireccion.Text;
+                        ProfesorActual = new Business.Entities.Personas();
+                        this.ProfesorActual.IDPlan = planActual.ID;
+                        this.ProfesorActual.Nombre = this.txtNombre.Text;
+                        this.ProfesorActual.Apellido = this.txtApellido.Text;
+                        this.ProfesorActual.Email = this.txtEmail.Text;
+                        this.ProfesorActual.Direccion = this.txtDireccion.Text;
                         DateTime fechaNac = new DateTime(int.Parse(this.txtAño.Text), int.Parse(this.txtMes.Text), int.Parse(this.txtDia.Text), 0, 0, 0);
-                        this.PersonaActual.FechaNacimiento = fechaNac;
-                        this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
-                        this.PersonaActual.Telefono = this.txtTelefono.Text;
+                        this.ProfesorActual.FechaNacimiento = fechaNac;
+                        this.ProfesorActual.Legajo = int.Parse(this.txtLegajo.Text);
+                        this.ProfesorActual.Telefono = this.txtTelefono.Text;
                       //this.PersonaActual.TipoPersona = (Business.Entities.Personas.TiposPersonas)Enum.Parse(typeof(Business.Entities.Personas.TiposPersonas), this.cmbTiposPersonas.SelectedValue.ToString());
-                        this.PersonaActual.State = BusinessEntity.States.New;
+                        this.ProfesorActual.State = BusinessEntity.States.New;
                         break;
                     }
                 case (ModoForm.Modificacion):
                     {
-                        this.PersonaActual.IDPlan = planActual.ID;
-                        this.PersonaActual.Nombre = this.txtNombre.Text;
-                        this.PersonaActual.Apellido = this.txtApellido.Text;
-                        this.PersonaActual.Email = this.txtEmail.Text;
-                        this.PersonaActual.Direccion = this.txtDireccion.Text;
+                        this.ProfesorActual.IDPlan = planActual.ID;
+                        this.ProfesorActual.Nombre = this.txtNombre.Text;
+                        this.ProfesorActual.Apellido = this.txtApellido.Text;
+                        this.ProfesorActual.Email = this.txtEmail.Text;
+                        this.ProfesorActual.Direccion = this.txtDireccion.Text;
                         DateTime fechaNac = new DateTime(int.Parse(this.txtAño.Text), int.Parse(this.txtMes.Text), int.Parse(this.txtDia.Text), 0, 0, 0);
-                        this.PersonaActual.FechaNacimiento = fechaNac;
-                        this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
-                        this.PersonaActual.Telefono = this.txtTelefono.Text;
+                        this.ProfesorActual.FechaNacimiento = fechaNac;
+                        this.ProfesorActual.Legajo = int.Parse(this.txtLegajo.Text);
+                        this.ProfesorActual.Telefono = this.txtTelefono.Text;
                       //this.PersonaActual.TipoPersona = (Business.Entities.Personas.TiposPersonas)Enum.Parse(typeof(Business.Entities.Personas.TiposPersonas), this.cmbTiposPersonas.SelectedValue.ToString());
-                        this.PersonaActual.State = BusinessEntity.States.Modified;
+                        this.ProfesorActual.State = BusinessEntity.States.Modified;
                         break;
                     }
                 case (ModoForm.Baja):
                     {
-                        this.PersonaActual.State = BusinessEntity.States.Deleted;
+                        this.ProfesorActual.State = BusinessEntity.States.Deleted;
                         break;
                     }
                 case (ModoForm.Consulta):
                     {
-                        this.PersonaActual.State = BusinessEntity.States.Unmodified;
+                        this.ProfesorActual.State = BusinessEntity.States.Unmodified;
                         break;
                     }
             }

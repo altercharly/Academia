@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class PersonaDesktop
+    partial class ProfesoresDesktop
     {
         /// <summary>
         /// Required designer variable.
@@ -241,7 +241,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.93548F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.Controls.Add(this.txtDia, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtMes, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtAño, 4, 0);
@@ -259,7 +259,7 @@
             this.txtDia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDia.Location = new System.Drawing.Point(3, 3);
             this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(23, 20);
+            this.txtDia.Size = new System.Drawing.Size(22, 20);
             this.txtDia.TabIndex = 6;
             this.txtDia.Text = "DD";
             this.txtDia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -267,7 +267,7 @@
             // txtMes
             // 
             this.txtMes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMes.Location = new System.Drawing.Point(53, 3);
+            this.txtMes.Location = new System.Drawing.Point(51, 3);
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(32, 20);
             this.txtMes.TabIndex = 7;
@@ -277,7 +277,7 @@
             // txtAño
             // 
             this.txtAño.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAño.Location = new System.Drawing.Point(150, 3);
+            this.txtAño.Location = new System.Drawing.Point(149, 3);
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(64, 20);
             this.txtAño.TabIndex = 8;
@@ -288,7 +288,7 @@
             // 
             this.barra1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.barra1.AutoSize = true;
-            this.barra1.Location = new System.Drawing.Point(33, 6);
+            this.barra1.Location = new System.Drawing.Point(32, 6);
             this.barra1.Name = "barra1";
             this.barra1.Size = new System.Drawing.Size(12, 13);
             this.barra1.TabIndex = 3;
@@ -298,7 +298,7 @@
             // 
             this.barra2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.barra2.AutoSize = true;
-            this.barra2.Location = new System.Drawing.Point(98, 6);
+            this.barra2.Location = new System.Drawing.Point(96, 6);
             this.barra2.Name = "barra2";
             this.barra2.Size = new System.Drawing.Size(12, 13);
             this.barra2.TabIndex = 4;
@@ -369,7 +369,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // PersonaDesktop
+            // ProfesoresDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -377,7 +377,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "PersonaDesktop";
+            this.Name = "ProfesoresDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Persona";
             this.Load += new System.EventHandler(this.PersonaDesktop_Load);

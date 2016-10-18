@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumnos\Alumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\Alumnos.Designer.cs">
+      <DependentUpon>Alumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\AlumnosDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\AlumnosDesktop.Designer.cs">
+      <DependentUpon>AlumnosDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="App.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -73,17 +85,17 @@
     <Compile Include="Materia\Materia.Designer.cs">
       <DependentUpon>Materia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persona\Persona.cs">
+    <Compile Include="Profesores\Profesores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Persona\Persona.Designer.cs">
-      <DependentUpon>Persona.cs</DependentUpon>
+    <Compile Include="Profesores\Profesores.Designer.cs">
+      <DependentUpon>Profesores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persona\PersonaDesktop.cs">
+    <Compile Include="Profesores\ProfesoresDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Persona\PersonaDesktop.Designer.cs">
-      <DependentUpon>PersonaDesktop.cs</DependentUpon>
+    <Compile Include="Profesores\ProfesoresDesktop.Designer.cs">
+      <DependentUpon>ProfesoresDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario\UsuarioDesktop.cs">
       <SubType>Form</SubType>
@@ -99,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alumnos\Alumnos.resx">
+      <DependentUpon>Alumnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,8 +123,11 @@
     <EmbeddedResource Include="Materia\MateriaDesktop.resx">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Persona\PersonaDesktop.resx">
-      <DependentUpon>PersonaDesktop.cs</DependentUpon>
+    <EmbeddedResource Include="Profesores\Profesores.resx">
+      <DependentUpon>Profesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesores\ProfesoresDesktop.resx">
+      <DependentUpon>ProfesoresDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
@@ -153,7 +171,14 @@
       <Name>Business.Logic</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Comisiones\" />
+    <Folder Include="Cursos\" />
+    <Folder Include="Especialidades\" />
+    <Folder Include="Inscripciones\" />
+    <Folder Include="Registro de Notas\" />
+    <Folder Include="Reportes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

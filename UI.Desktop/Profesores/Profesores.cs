@@ -49,7 +49,7 @@ namespace UI.Desktop
 
         private void tbsNuevo_Click(object sender,EventArgs e)
         {
-            PersonaDesktop formPersona = new PersonaDesktop(ApplicationForm.ModoForm.Alta);
+            ProfesoresDesktop formPersona = new ProfesoresDesktop(ApplicationForm.ModoForm.Alta);
             formPersona.ShowDialog();
             this.Listar();
         }
@@ -61,7 +61,7 @@ namespace UI.Desktop
                 if(!(this.dgvPersonas.SelectedRows == null))
                 {
                     int ID = ((Business.Entities.Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
-                    PersonaDesktop formpersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                    ProfesoresDesktop formpersona = new ProfesoresDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                     formpersona.ShowDialog();
                     this.Listar();
                 }
@@ -79,7 +79,7 @@ namespace UI.Desktop
                 if(!(this.dgvPersonas.SelectedRows == null))
                 {
                     int ID = ((Business.Entities.Personas)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
-                    PersonaDesktop formpersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
+                    ProfesoresDesktop formpersona = new ProfesoresDesktop(ID, ApplicationForm.ModoForm.Baja);
                     formpersona.ShowDialog();
                     this.Listar();
                 }
