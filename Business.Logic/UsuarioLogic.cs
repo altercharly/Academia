@@ -31,7 +31,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                throw new Exception("Error en la carga de datos", Ex);
+                throw Ex;
             }
         }
         

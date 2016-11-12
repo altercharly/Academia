@@ -16,7 +16,7 @@ namespace Business.Entities
         private int _Legajo;
         private string _Nombre;
         private string _Telefono;
-        //private TiposPersonas _TiposPersonas;
+        private TipoPersona _TiposPersonas;
 
         public string Apellido
         {
@@ -60,10 +60,10 @@ namespace Business.Entities
             set { _Telefono = value; }
         }
 
-        /*public TiposPersona TipoPersonas
+        public TipoPersona TiposPersonas
         {
-            get { return _TipoPersonas; }
-            set { _TipoPersonas = value; }
-        }*/
+            get { return _TiposPersonas; }
+            set { _TiposPersonas = value; }
+        }
     }
 }

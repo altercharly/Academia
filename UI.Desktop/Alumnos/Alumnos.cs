@@ -13,7 +13,7 @@ using Business.Logic;
 
 namespace UI.Desktop.Alumnos
 {
-    public partial class Alumnos : Form
+    public partial class Alumnos : ApplicationForm
     {
         public Alumnos()
         {

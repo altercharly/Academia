@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class TipoPersona : BusinessEntity
+    public class TipoPersona : BusinessEntity
     {
         int _IdTipo;
         string _Descripcion;
+
+        // 1 for Alumno - 2 for Docente
 
         int IdTipo
         {

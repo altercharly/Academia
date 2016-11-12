@@ -67,6 +67,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comisiones\Comisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones\Comisiones.Designer.cs">
+      <DependentUpon>Comisiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materia\Materia.resx">
       <DependentUpon>Materia.cs</DependentUpon>
@@ -172,10 +181,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Comisiones\" />
     <Folder Include="Cursos\" />
     <Folder Include="Especialidades\" />
     <Folder Include="Inscripciones\" />
+    <Folder Include="Planes\" />
     <Folder Include="Registro de Notas\" />
     <Folder Include="Reportes\" />
   </ItemGroup>

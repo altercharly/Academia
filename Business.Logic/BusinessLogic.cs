@@ -14,5 +14,7 @@ namespace Business.Logic
         Data.Database.PersonaAdapter _PersonaData;
         Data.Database.PlanAdapter _PlanData;
         Data.Database.MateriaAdapter _MateriaData;
+        Data.Database.ComisionAdapter _ComisionData;
+
     }
 }

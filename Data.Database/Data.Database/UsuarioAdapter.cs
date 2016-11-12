@@ -9,7 +9,7 @@ namespace Data.Database
 {
     public class UsuarioAdapter:Adapter
     {
-        #region DatosEnMemoria
+ /*      #region DatosEnMemoria
         // Esta región solo se usa en esta etapa donde los datos se mantienen en memoria.
         // Al modificar este proyecto para que acceda a la base de datos esta será eliminada
         private static List<Usuario> _Usuarios;
@@ -60,7 +60,7 @@ namespace Data.Database
             }
         }
         #endregion
-
+*/
         public List<Usuario> GetAll()
         {
             List<Usuario> usuarios = new List<Usuario>();

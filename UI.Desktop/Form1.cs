@@ -18,5 +18,11 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
+
+        private void btnAlumnos_Click(object sender, EventArgs e)
+        {
+            AlumnosDesktop FormAlum = new AlumnosDesktop();
+            FormAlum.Show();
+        }
     }
 }
