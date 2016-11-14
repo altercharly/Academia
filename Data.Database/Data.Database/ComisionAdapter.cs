@@ -53,7 +53,7 @@ namespace Data.Database
             return comisiones;
         }
 
-        public Business.Entities.Comision GetOne(int ID)
+        public Comision GetOne(int ID)
         {
             Comision com = new Comision();
 
@@ -102,8 +102,8 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                ErrorEliminar miExp = new ErrorEliminar("No se puede eliminar la comision.", Ex);
-                throw miExp;
+                Exception ExcepcionManejada = new Exception("Error al eliminar datos de comision", Ex);
+                throw ExcepcionManejada;
             }
             finally
             {
@@ -135,14 +135,13 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones(desc_comision,anio_especialidad,id_plan) " +
-                    "VALUES(@desc_comision,@anio_especialidad,@id_plan) " +
-                    "SELECT @@identity", //esta linea es para recuperar el ID que asignó el SQL automaticamente
-                    sqlConn);
+                    "VALUES(@desc_comision, @anio_especialidad, @id_plan) " +
+                    "SELECT @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.Descripcion;
                 cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.IDPlan;
-                comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar()); // asi se obtiene el ID que asigno al BD automaticamente
+                comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar()); 
             }
             catch (Exception Ex)
             {

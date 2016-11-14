@@ -15,6 +15,7 @@ namespace Business.Entities
         private string _Apellido;   
         private string _Email;
         private bool _Habilitado;
+        public bool _EstadoSesion;
 
     /*    public Usuario(int id, string nombreu, string clave, string nom, string ape, string email)
         {
@@ -75,6 +76,12 @@ namespace Business.Entities
         {
             get { return _Habilitado; }
             set { _Habilitado = value; }
+        }
+
+        public bool EstadoSesion
+        {
+            get { return _EstadoSesion; }
+            set { _EstadoSesion = value; }
         }
     }
 }

@@ -79,6 +79,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materia\MateriaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materia\Materia.resx">
       <DependentUpon>Materia.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,11 +189,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
+    <ProjectReference Include="..\..\Source\Repos\Academia\Business.Entities\Business.Entities.csproj">
       <Project>{397439a5-1a91-472a-812e-94684366b86b}</Project>
       <Name>Business.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
+    <ProjectReference Include="..\..\Source\Repos\Academia\Business.Logic\Business.Logic.csproj">
       <Project>{8a6c70b5-5754-472d-b676-211ca85ec1ae}</Project>
       <Name>Business.Logic</Name>
     </ProjectReference>

@@ -35,9 +35,9 @@ namespace Business.Logic
             }
         }
         
-        public Usuario GetOne (int  Id )
+        public Usuario GetOne (String usu, String pass)
         {
-            return UsuarioData.GetOne(Id);
+            return UsuarioData.GetOne(usu, pass);
         }
 
         public void Delete(int Id)

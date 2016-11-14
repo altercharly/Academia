@@ -1,16 +1,17 @@
 ﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Formulario_web11" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" DataKeyNames="ID">
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" DataSourceID="SqlDataSource2">
             <Columns>
-                <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                <asp:BoundField HeaderText="Email" DataField="Email" />
-                <asp:BoundField HeaderText="Usuario" DataField="NombreUsuario" />
-                <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
+                <asp:BoundField HeaderText="nombre" DataField="nombre" SortExpression="nombre" />
+                <asp:BoundField HeaderText="apellido" DataField="apellido" SortExpression="apellido" />
+                <asp:BoundField HeaderText="email" DataField="email" SortExpression="email" />
+                <asp:BoundField HeaderText="nombre_usuario" DataField="nombre_usuario" SortExpression="nombre_usuario" />
+                <asp:CheckBoxField DataField="habilitado" HeaderText="habilitado" SortExpression="habilitado" />
             </Columns>
+            <SelectedRowStyle BackColor="Black" ForeColor="White" />
         </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=LAPTOP-SQQRFPKK\SQLEXPRESS;Initial Catalog=tp2_net;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [nombre], [apellido], [email], [nombre_usuario], [habilitado] FROM [usuarios] ORDER BY [nombre]"></asp:SqlDataSource>
     </asp:Panel>
 <asp:Panel ID="Usuarios" Visible="false" runat="server">
     <asp:Label ID="nombreLabel" runat="server" Text="Nombre: ">  </asp:Label>

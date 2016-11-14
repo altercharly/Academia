@@ -104,9 +104,8 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                // ErrorEliminar miExp = new ErrorEliminar("No se puede eliminar la materia.", Ex);
-                // throw miExp;
-                throw Ex;
+                Exception ExcepcionManejada =  new Exception("Error al eliminar datos de la materia", Ex);
+                throw ExcepcionManejada;
             }
             finally
             {
