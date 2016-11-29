@@ -23,9 +23,9 @@ namespace Business.Logic
             set { _ComisionData = value; }
         }
 
-        public List<Comision> GetAll()
+        public List<Comision> GetAll(int idPlan)
         {
-            return ComisionData.GetAll();
+            return ComisionData.GetAll(idPlan);
         }
 
         public Comision GetOne(int ID)

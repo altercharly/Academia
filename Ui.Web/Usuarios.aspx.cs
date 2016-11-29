@@ -84,9 +84,9 @@ namespace UI.Web
             }
         }       
 
-        private void LoadForm(int id)
+        private void LoadForm(String usu, String pass)
         {
-            this.Entity = this.Logic.GetOne(id);
+            this.Entity = this.Logic.GetOne(usu, pass);
             this.nombreTextBox.Text = this.Entity.Nombre;
             this.ApellidoTextBox.Text = this.Entity.Apellido;
             this.emailTextBox.Text = this.Entity.Email;
@@ -146,7 +146,7 @@ namespace UI.Web
             {
                 this.Usuarios.Visible = true;
                 this.FormMode = FormModes.Modificacion;
-                this.LoadForm(this.SelectedID);
+                this.LoadForm(this .SelectedID);
             }
         }
 

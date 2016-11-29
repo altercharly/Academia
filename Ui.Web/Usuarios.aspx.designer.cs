@@ -10,7 +10,8 @@
 namespace UI.Web {
     
     
-    public partial class Formulario_web11 {
+    public partial class FormUsuarios
+    {
         
         /// <summary>
         /// Control gridPanel.

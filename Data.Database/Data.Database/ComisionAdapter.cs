@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Permissions;
 
 
 namespace Data.Database
@@ -13,7 +14,7 @@ namespace Data.Database
     public class ComisionAdapter : Adapter
     {
 
-        public List<Comision> GetAll()
+        public List<Comision> GetAll(int idPlan)
         {
             List<Comision> comisiones = new List<Comision>();
 
@@ -21,8 +22,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdComisiones = new SqlCommand("SELECT * FROM comisiones", sqlConn);
-
+                SqlCommand cmdComisiones = new SqlCommand("SELECT * FROM comisiones WHERE id_plan=@idPlan", sqlConn);
+                
                 SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
 
                 while (drComisiones.Read())
